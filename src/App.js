@@ -10,6 +10,8 @@ import ChangeInfo from './Components/ChangeInfo'
 import Default from './Components/Default'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Homebody from './Components/Homebody';
+import axios from 'axios'
 
 class App extends Component {  
   state = {
@@ -161,7 +163,7 @@ class App extends Component {
   
 
   render(){
-  
+    const res =  axios.get('https://your-products-manager.herokuapp.com/api/company');
     const isAuthenticated = this.state.isAuthenticated;
     return (
       <div className="App">
@@ -171,6 +173,10 @@ class App extends Component {
           />
         <ToastContainer/>
         <Switch> 
+        <Route path='/home' render={ props =>{
+                return <Homebody></Homebody>;
+              }}>
+              </Route>
              <Route path='/register' render={ props =>{
                 return isAuthenticated ?  <Redirect to="/" /> : <Register registerHandler = {this.registerHandler} {...props}/>;
               }}>

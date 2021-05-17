@@ -1,0 +1,15 @@
+.offers{
+    background-color: white;
+    border-bottom: 1px solid #212529;
+    height: 50%;
+    color:#212529;
+}
+.suggest{
+    background-color: white;
+    color:#212529;
+    height: 50%;
+}
+
+.mainbody{
+    height: 92vh;
+}

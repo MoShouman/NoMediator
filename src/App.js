@@ -12,6 +12,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Homebody from './Components/Homebody';
 import axios from 'axios'
+import Offers from './Components/Offers';
+import Companyprofile from './Components/Companyprofile'
 
 class App extends Component {  
   state = {
@@ -175,6 +177,10 @@ class App extends Component {
         <Switch> 
         <Route path='/home' render={ props =>{
                 return <Homebody></Homebody>;
+              }}>
+              </Route>
+              <Route path='/comprofile' render={ props =>{
+                return <Companyprofile></Companyprofile>;
               }}>
               </Route>
              <Route path='/register' render={ props =>{

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/Home.css';
 const Pagination=({postsperpage,totalposts,paginate})=>{
 const pagenum=[];
     for(let i=1;i<=Math.ceil(totalposts/postsperpage);i++){

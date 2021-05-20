@@ -5,8 +5,8 @@ import { Component } from 'react';
 import Pagination from './Pagintaion'
 class Offers extends Component{
     render(){
-        return<div class="offers"><h4 classname="mb-2">Companies you work with</h4>
-        <Posts posts={this.props.posts} loading={this.props.loading}></Posts>
+        return<div class="offers shadow rounded  mt-2 container"><h4 class="mb-4 mt-4">Companies you work with</h4>
+        <Posts classname="mt-4" posts={this.props.posts} loading={this.props.loading}></Posts>
         <Pagination postsperpage={this.props.postsperpage} totalposts={this.props.totalposts.length} paginate={this.props.paginate}></Pagination>
         </div>
     }

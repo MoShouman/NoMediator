@@ -8,7 +8,8 @@ export default class Register extends Component {
             username:'',
             email:'',
             password:'',
-            confirmPassword:''  
+            confirmPassword:'',
+            type:''
     }
     
     onChangeHandler =  (event) => {
@@ -17,7 +18,7 @@ export default class Register extends Component {
     
     onSubmitHandler = () => {
         if(this.state.password === this.state.confirmPassword && !this.state.email.includes('@admin.com'))
-            this.props.registerHandler(this.state, this.props)
+            this.props.registerHandler(this.state, this.props, `https://your-products-manager.herokuapp.com/api/${this.state.type}/register`)
         else if(this.state.password !== this.state.confirmPassword)
             toast.error(`Password doesn't match`, {
                 position: "top-center",
@@ -82,6 +83,10 @@ export default class Register extends Component {
                                          required={true}                   
                                          onChangeHandler = {this.onChangeHandler}              
                         />
+                        <input type="radio" id="user" name="type" value="user" onChange={this.onChangeHandler}/>
+                        <label for="user">User</label><br/>
+                        <input type="radio" id="company" name="type" value="company" onChange={this.onChangeHandler}/>
+                        <label for="comapny">Company</label><br/>
                         <button type="submit" className="bt btn-dark d-block px-4 py-2  rounded-lg col-sm-5 col-md-12">SignUp</button>
                         <Link to='/login' className='mt-2 d-block text-dark text-decoration-none'>
                             Already have an account.

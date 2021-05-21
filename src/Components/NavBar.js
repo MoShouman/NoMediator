@@ -22,13 +22,13 @@ class NavBar extends Component {
                                 </Link>
                             </li>
                             <li style={!(this.props.isAuthenticated)?{display:'none'}:{display:'block'}}>
-                                <Link to='/profile' className='navbar-brand'>
-                                    Profile
+                                <Link to='/' className='navbar-brand'>
+                                    Home
                                 </Link>
                             </li>
                             <li style={!(this.props.isAuthenticated)?{display:'none'}:{display:'block'}}>
-                                <Link to='/home' className='navbar-brand'>
-                                    home
+                                <Link to='/profile' className='navbar-brand'>
+                                    Profile
                                 </Link>
                             </li>
                             <li style={!(this.props.isAuthenticated)?{display:'none'}:{display:'block'}}>
@@ -38,10 +38,10 @@ class NavBar extends Component {
                             </li>
                         </ul>
                     </div>
-                    <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+                    <form class= {this.props.isAuthenticated?"form-inline my-2 my-lg-0": "form-inline my-2 my-lg-0 d-none"} >
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </nav>
           );

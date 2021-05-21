@@ -41,11 +41,9 @@ render() {
                                      onChangeHandler = {this.onChangeHandler}              
                                     />
                     <button type="submit" className="bt btn-dark d-block px-4 py-2 rounded-lg col-sm-5 col-md-12">SignIn</button>
-                    <div className='mt-2 d-flex justify-content-around'>
-                        <Link className='text-dark text-decoration-none' to='/register' >
-                            Create new account
-                        </Link>
-                    </div>
+                    <Link className='mt-2 d-block text-dark text-decoration-none' to='/register' >
+                        Create new account
+                    </Link>
                 </form>
             </div>
 

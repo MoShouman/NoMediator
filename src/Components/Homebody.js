@@ -21,13 +21,13 @@ const Homebody = ()=>{
         }
         fetchposts();
     },[]);
-console.log(posts);
-const indexoflastpost = currentpage*postsperpage;
-const indexoffirstpost = indexoflastpost-postsperpage;
-const  currentposts = posts.slice(indexoffirstpost,indexoflastpost);
+        console.log(posts);
+        const indexoflastpost = currentpage*postsperpage;
+        const indexoffirstpost = indexoflastpost-postsperpage;
+        const  currentposts = posts.slice(indexoffirstpost,indexoflastpost);
 
-const paginate=(pagenum)=>{
-    setcurrentpage(pagenum);
+        const paginate=(pagenum)=>{
+            setcurrentpage(pagenum);
 }
     return(
         <div className="mainbody container-fluid mt-4">

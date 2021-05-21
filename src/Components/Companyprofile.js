@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React,{useEffect,useState} from 'react';
-import '../styles/Comprofile.css'
+// import '../styles/Comprofile.css'
 import axios from 'axios'
 import Companyproducts from './Companyproducts'
 import {Data} from '../constant/data'

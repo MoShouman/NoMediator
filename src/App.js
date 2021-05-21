@@ -74,13 +74,13 @@ class App extends Component {
   }
 
   //register function
-  registerHandler = (data,props) =>{
+  registerHandler = (data,props,url) =>{
     let status = 0
     const username = data.username 
     const email = data.email 
     const password = data.password
 
-    fetch('https://your-products-manager.herokuapp.com/api/user/register', {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -175,28 +175,28 @@ class App extends Component {
           />
         <ToastContainer/>
         <Switch> 
-        <Route path='/home' render={ props =>{
-                return <Homebody></Homebody>;
+              <Route exact path='/' render={ props =>{
+                return !isAuthenticated ?  <Redirect to="/login" /> : <Homebody></Homebody>;
               }}>
               </Route>
               <Route path='/comprofile' render={ props =>{
-                return <Companyprofile></Companyprofile>;
+                return !isAuthenticated ?  <Redirect to="/login" /> : <Companyprofile></Companyprofile>;
               }}>
               </Route>
              <Route path='/register' render={ props =>{
-                return isAuthenticated ?  <Redirect to="/" /> : <Register registerHandler = {this.registerHandler} {...props}/>;
+                return isAuthenticated ?  <Redirect to="/login" /> : <Register registerHandler = {this.registerHandler} {...props}/>;
               }}>
               </Route>
               <Route path='/login' render={ props => {
-                return isAuthenticated ?  <Redirect to="/" /> : <Login loginHandler = {this.loginHandler} {...props}/>;
+                return isAuthenticated ?  <Redirect to="/login" /> : <Login loginHandler = {this.loginHandler} {...props}/>;
               }}>
               </Route>
               <Route path='/Profile' render={ props =>{
-                return !isAuthenticated ?  <Redirect to="/" /> : <Profile userInfo = {this.state.currentUserInfo} changeInfo={this.changeInfo} {...props}/>;
+                return !isAuthenticated ?  <Redirect to="/login" /> : <Profile userInfo = {this.state.currentUserInfo} changeInfo={this.changeInfo} {...props}/>;
               }}>
               </Route>
               <Route path='/changeInfo' render={ props =>{
-                return !isAuthenticated ?  <Redirect to="/" /> : <ChangeInfo userInfo = {this.state.currentUserInfo} changeInfo={this.changeInfo} {...props}/>;
+                return !isAuthenticated ?  <Redirect to="/login" /> : <ChangeInfo userInfo = {this.state.currentUserInfo} changeInfo={this.changeInfo} {...props}/>;
               }}>
               </Route>
               <Route component={Default}/>

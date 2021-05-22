@@ -19,7 +19,8 @@ class ChangeInfo extends Component {
     }
 
     onSubmitHandler = () => {
-        this.props.changeInfo({...this.state}, this.props)
+        if( Object.toJSON(this.state) != Object.toJSON(this.pros))
+            this.props.changeInfo({...this.state}, this.props)
     }
 
     render() { 
@@ -28,7 +29,7 @@ class ChangeInfo extends Component {
             <h2 className='text-uppercase d-block text-center my-4'>Edit Informations</h2>
             <div className='row '>
                 <div className='col-sm-5 col-md-12 d-flex justify-content-center'>
-                    <img style={{borderRadius:'50%', maxWidth:'70px', maxHeight:'70px'}} src={this.props.userInfo.logo} alt='image'/>                         
+                    <img style={{borderRadius:'50%', maxWidth:'70px', maxHeight:'70px'}} src={this.props.userInfo.logo ? this.props.userInfo.logo : 'img/profile.png'} alt='image'/>                         
                 </div>
                 <form onSubmit = {e => {e.preventDefault(); this.onSubmitHandler()}}  className='d-block col-5 mx-auto shadow p-3 mb-5 mt-1 rounded'>
                     <InputComponent title = 'Username' 

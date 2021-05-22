@@ -14,6 +14,7 @@ import Homebody from './Components/Homebody';
 import axios from 'axios'
 import Offers from './Components/Offers';
 import Companyprofile from './Components/Companyprofile'
+import CompanyHome from './Components/Company/CompanyHome'
 
 class App extends Component {  
   state = {
@@ -181,6 +182,10 @@ class App extends Component {
               </Route>
               <Route path='/comprofile' render={ props =>{
                 return !isAuthenticated ?  <Redirect to="/login" /> : <Companyprofile></Companyprofile>;
+              }}>
+              </Route>
+              <Route path='/companyHome' render={ props =>{
+                return isAuthenticated ?  <Redirect to="/login" /> : <CompanyHome userInfo={this.state.currentUserInfo}/>;
               }}>
               </Route>
              <Route path='/register' render={ props =>{

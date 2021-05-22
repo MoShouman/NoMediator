@@ -8,6 +8,15 @@ class Profile extends Component {
     }
 
     render() { 
+        let displayComapny = {}
+        let displayUser = {}
+        if(this.props.userInfo.type === 'user'){
+            displayComapny={display:'none'} 
+            displayUser={display:'block'} 
+        } else {
+            displayComapny={display:'block'}
+            displayUser={display:'none'}
+        }
         return ( 
             <div className='container'>
             <h2 className='text-uppercase d-block text-center my-4'>Profile</h2>
@@ -21,15 +30,8 @@ class Profile extends Component {
                                      type = 'text'     
                                      disabled={this.state.disabled}
                                      value = {this.props.userInfo.username}
-                                     onChangeHandler = {this.onChangeHandler}                      
-                                    />
-                     <InputComponent title = 'Email'
-                                      name = 'email' 
-                                      type = 'text'
-                                      disabled={this.state.disabled}
-                                      value = {this.props.userInfo.email}
-                                      onChangeHandler = {this.onChangeHandler}              
-
+                                     onChangeHandler = {this.onChangeHandler}              
+                                     style={displayUser}        
                                     />
                      <InputComponent title = 'City'
                                      name = 'city'
@@ -45,16 +47,17 @@ class Profile extends Component {
                                      disabled={this.state.disabled}
                                      value = {this.props.userInfo.city}
                                      onChangeHandler = {this.onChangeHandler}              
-
                                     />
-                     <InputComponent title = 'Type'
-                                     name = 'type'
+                    
+                     <InputComponent title = 'Location'
+                                     name = 'location'
                                      type = 'text'
                                      disabled={this.state.disabled}
-                                     value = {this.props.userInfo.type}
+                                     value = {this.props.userInfo.location}
                                      onChangeHandler = {this.onChangeHandler}              
-
                                     />
+
+
                     <Link to='/changeInfo' className='bt btn-dark px-4 py-2 rounded-lg col-sm-5 col-md-12 d-block text-center text-decoration-none'>Change Informations</Link>
                 </form>
             </div>

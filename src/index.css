@@ -47,7 +47,7 @@ code {
 }
 .cart-item i:hover{
   cursor: pointer;
-  color: orange;
+  color: rgb(43, 204, 78);
   transition: all 0.3s ease-in-out;
 }
 .cart-item .danger:hover{

@@ -1,0 +1,64 @@
+*{
+    text-align: center;
+}
+.offers{
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid #212529;
+    height: 100%;
+    color:#212529;
+}
+.suggest{
+    background-color: white;
+    color:#212529 !important;
+    height: 100%;
+
+}
+.suggest a{
+    color: white;
+    text-decoration: none;
+}
+
+.mainbody{
+    height: 87vh;
+}
+.main1{
+    height: 90%;
+}
+.pagination{
+    position: absolute;
+    bottom: 2%;
+}
+.mainside{
+    height: 100%;
+}
+.side1{
+    height: 50%;
+}
+.imgcontain{
+    position:absolute;
+    left: 2%;
+    width: 60px;
+    height: 60%;
+}
+a{
+    color: black;
+}
+.container{
+    width: 100%;
+}
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}

@@ -215,7 +215,7 @@ getOrders = (props) => {
     const username = data.username 
     const email = data.email 
     const password = data.password
-
+    const type = data.type
     fetch(url, {
       method: 'POST',
       headers: {
@@ -227,7 +227,7 @@ getOrders = (props) => {
     }).then(response => {status = response.status; return response.json()})
       .then(data => {
         if(status === 200){
-          this.setState({currentUserInfo:data,isAuthenticated:true});
+          this.setState({currentUserInfo:data,isAuthenticated:true,num:type});
           toast.success('registered', {
             position: "top-center",
             autoClose: 4000,

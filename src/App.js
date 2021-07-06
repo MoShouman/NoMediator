@@ -215,7 +215,8 @@ getOrders = (props) => {
     const username = data.username 
     const email = data.email 
     const password = data.password
-    const type = data.type
+     let type = data.type
+    type === 'company'? type = 2: type = 1
     fetch(url, {
       method: 'POST',
       headers: {
